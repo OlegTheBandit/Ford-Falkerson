@@ -284,6 +284,19 @@ int main()
 	List<string> verties;
 	city_list_build(verties, input);
 	input.close();
+	int flag = 0;
+	for (int i = 0; i < verties.get_size(); i++)
+	{
+		if (verties.get_pointer(i)->data == "S" || verties.get_pointer(i)->data == "T")
+		{
+			flag++;
+		}
+	}
+	if (flag != 2)
+	{
+		cout << "Haent got any verties";
+		return 0;
+	}
 	int** matrix;
 	matrix = new int* [verties.get_size()];
 	for (int i = 0; i < verties.get_size(); i++)
